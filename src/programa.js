@@ -15,14 +15,15 @@ class Circle {
     this.opacity = 0.05 + Math.random() * 0.5;
   }
   dibujarCircles(w, h) {
+   
     ctx.beginPath();
     ctx.strokeStyle = 'rgba(255,255,255,0)';
     ctx.arc(w, h, 5, 0, 2 * Math.PI);
     const r = 250;
     const g = Math.floor(300);
     const b = Math.floor(300);
-    const alpha = 0.5;
-    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    const alpha = 0.9;
+    ctx.fillStyle = 'blanchedalmond';
     ctx.fill();
     ctx.stroke();
   }
@@ -95,7 +96,7 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
     const hue = i / 2;
     const r = bufferLength;
     const g = Math.floor(barHeight);
-    const b = Math.floor(hue);
+    const b = Math.floor(hue*2);
     const alpha = 0.9;
     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
     ctx.fillRect(0, 0, barWidth * 2, barHeight * 3);
